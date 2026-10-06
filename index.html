@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of Milan Nathaniel A. Liwanag, an Information Technology student.">
+    <title>Milan Liwanag | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <a href="#home" class="logo">MIEL<span>.</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+        <nav id="navMenu">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME -->
+        <section id="home" class="section hero">
+            <div class="hero-content">
+                <p class="eyebrow">INFORMATION TECHNOLOGY STUDENT</p>
+                <h1>HELLO, I'M<br><span>MILAN LIWANAG</span></h1>
+                <p class="hero-text">
+                    An aspiring web developer interested in building clean,
+                    useful, and creative digital experiences.
+                </p>
+                <a href="#projects" class="gold-button">VIEW MY WORK <span>↓</span></a>
+            </div>
+
+            <div class="hero-mark" aria-label="Milan Liwanag portrait">
+                 <div class="hero-ring"></div>
+                   <img src="amiel.jpg" alt="Milan Liwanag">
+                       <span>ML</span>
+                    </div>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="section-heading">
+                <h2>GET TO KNOW<br><span>ME</span></h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="profile-card">
+                    <img src="miel.jpg" alt="Milan Liwanag profile picture">
+                    <div>
+                        <p class="card-label">PROFILE</p>
+                        <h3>MIEL</h3>
+                        <p>Information Technology Student</p>
+                    </div>
+                </div>
+
+                <div class="about-copy">
+                    <p>
+                        I am Milan Nathaniel A. Liwanag, a third-year Information
+                        Technology student at National University Philippines.
+                        I enjoy combining technology, design, and creativity
+                        when working on digital projects.
+                    </p>
+                    <p>
+                        My interests include web development, user interface
+                        design, digital art, gaming, manga, music, photography,
+                        and other creative forms of storytelling.
+                    </p>
+
+                    <div class="info-grid">
+                        <div>
+                            <span>EDUCATION</span>
+                            <strong>BS Information Technology</strong>
+                            <small>National University Philippines</small>
+                        </div>
+                        <div>
+                            <span>FOCUS</span>
+                            <strong>Web Development</strong>
+                            <small>UI / Front-End / Creative Technology</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills">
+                <p class="card-label">SKILLS & INTERESTS</p>
+                <div class="skill-list">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>UI Design</span>
+                    <span>Responsive Design</span>
+                    <span>Digital Art</span>
+                    <span>Game Development</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <div class="section-heading">
+                <h2>SELECTED<br><span>PROJECTS</span></h2>
+                <p class="heading-description">
+                    A selection of academic and personal projects that show
+                    my development as an IT student.
+                </p>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid"></div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="section-heading">
+                <h2>LET'S<br><span>CONNECT</span></h2>
+                <p class="heading-description">
+                    Have a question, project idea, or simply want to say hello?
+                    Send me a message through the form.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <p class="card-label">CONTACT INFORMATION</p>
+                    <div class="contact-item">
+                        <span>EMAIL</span>
+                        <strong>natealiwanag@gmail.com</strong>
+                    </div>
+                    <div class="contact-item">
+                        <span>PHONE</span>
+                        <strong>0951 592 7585</strong>
+                    </div>
+                    <div class="contact-item">
+                        <span>LOCATION</span>
+                        <strong>Manila, Philippines</strong>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-row">
+                        <label>
+                            NAME
+                            <input type="text" id="name" name="name" placeholder="Your name">
+                            <small class="error" id="nameError"></small>
+                        </label>
+
+                        <label>
+                            EMAIL
+                            <input type="email" id="email" name="email" placeholder="you@example.com">
+                            <small class="error" id="emailError"></small>
+                        </label>
+                    </div>
+
+                    <label>
+                        MESSAGE
+                        <textarea id="message" name="message" rows="6" placeholder="Write your message..."></textarea>
+                        <small class="error" id="messageError"></small>
+                    </label>
+
+                    <button type="submit" class="gold-button">SEND MESSAGE <span>→</span></button>
+                    <p id="formStatus" class="form-status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>© <span id="year"></span> MILAN NATHANIEL A. LIWANAG</div>
+        <div>PERSONAL PORTFOLIO</div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
