@@ -9,9 +9,9 @@
 </head>
 <body>
     <header class="navbar" id="navbar">
-        <a href="#home" class="logo">MIEL<span>.</span></a>
+        <a href="#home" class="logo"><span class="logo-cross" aria-hidden="true">†</span> <span class="logo-word">MIEL</span></a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">☰</button>
 
         <nav id="navMenu">
             <a href="#home" class="nav-link active">Home</a>
@@ -26,7 +26,7 @@
         <section id="home" class="section hero">
             <div class="hero-content">
                 <p class="eyebrow">INFORMATION TECHNOLOGY STUDENT</p>
-                <h1>HELLO, I'M<br><span>MILAN LIWANAG</span></h1>
+                <h1>HELLO, I'M<br><span>MILAN LIWANAG.</span></h1>
                 <p class="hero-text">
                     An aspiring web developer interested in building clean,
                     useful, and creative digital experiences.
@@ -34,33 +34,39 @@
                 <a href="#projects" class="gold-button">VIEW MY WORK <span>↓</span></a>
             </div>
 
-            <div class="hero-mark" aria-label="Milan Liwanag portrait">
-                 <div class="hero-ring"></div>
-                   <img src="amiel.jpg" alt="Milan Liwanag">
-                       <span>ML</span>
-                    </div>
+            <div class="hero-mark" aria-hidden="true">
+                <img class="hero-photo" src="amiel.jpg" alt="">
+                <span class="hero-initials">ML</span>
+                <i class="hero-star"></i>
+            </div>
 
+            <div class="scroll-note">SCROLL TO EXPLORE</div>
         </section>
 
         <!-- ABOUT -->
         <section id="about" class="section">
             <div class="section-heading">
-                <h2>GET TO KNOW<br><span>ME</span></h2>
+                <p class="eyebrow">01 — ABOUT</p>
+                <h2>GET TO KNOW<br><span>ME.</span></h2>
             </div>
 
             <div class="about-grid">
                 <div class="profile-card">
-                    <img src="miel.jpg" alt="Milan Liwanag profile picture">
+                    <div class="portrait-frame">
+                        <img src="miel.jpg" alt="Milan Liwanag profile picture" onerror="this.hidden=true">
+                        <span class="portrait-fallback" aria-hidden="true">ML</span>
+                        <span class="portrait-orbit" aria-hidden="true"></span>
+                    </div>
                     <div>
                         <p class="card-label">PROFILE</p>
-                        <h3>Milan Liwanag</h3>
+                        <h3>MIEL</h3>
                         <p>Information Technology Student</p>
                     </div>
                 </div>
 
                 <div class="about-copy">
                     <p>
-                        I am Milan Nathaniel A. Liwanag, a third-year Information
+                        I am <span class="name-highlight">Mi</span>lan Nathani<span class="name-highlight">el</span> A. Liwanag, a third-year Information
                         Technology student at National University Philippines.
                         I enjoy combining technology, design, and creativity
                         when working on digital projects.
@@ -103,7 +109,8 @@
         <!-- PROJECTS -->
         <section id="projects" class="section">
             <div class="section-heading">
-                <h2>SELECTED<br><span>PROJECTS</span></h2>
+                <p class="eyebrow">02 — PORTFOLIO</p>
+                <h2>SELECTED<br><span>PROJECTS.</span></h2>
                 <p class="heading-description">
                     A selection of academic and personal projects that show
                     my development as an IT student.
@@ -116,7 +123,8 @@
         <!-- CONTACT -->
         <section id="contact" class="section contact-section">
             <div class="section-heading">
-                <h2>LET'S<br><span>CONNECT</span></h2>
+                <p class="eyebrow">03 — CONTACT</p>
+                <h2>LET'S<br><span>CONNECT.</span></h2>
                 <p class="heading-description">
                     Have a question, project idea, or simply want to say hello?
                     Send me a message through the form.

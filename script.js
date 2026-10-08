@@ -1,9 +1,15 @@
+// ------------------------------
+// Portfolio data + OOP
+// ------------------------------
+
+// Each Project object stores the information displayed in the portfolio.
 class Project {
-    constructor(number, title, description, tags, image) {
+    constructor(number, title, description, tags, art, image) {
         this.number = number;
         this.title = title;
         this.description = description;
         this.tags = tags;
+        this.art = art;
         this.image = image;
     }
 
@@ -11,89 +17,67 @@ class Project {
         const card = document.createElement("article");
         card.className = "project-card";
 
+        const visual = document.createElement("div");
+        visual.className = `project-visual project-art--${this.art}`;
+        const preview = document.createElement("img");
+        preview.src = this.image;
+        preview.alt = `${this.title} screenshot`;
+        preview.loading = "lazy";
+        preview.onerror = () => {
+            visual.classList.add("image-unavailable");
+            preview.hidden = true;
+        };
+        visual.appendChild(preview);
+
         const tags = this.tags
             .map(tag => `<span>${tag}</span>`)
             .join("");
 
-        card.innerHTML = `
-            <img
-                class="project-image"
-                src="${this.image}"
-                alt="${this.title} project screenshot"
-                loading="lazy"
-            >
+        const number = document.createElement("div");
+        number.className = "project-number";
+        number.textContent = this.number;
 
-            <div class="project-card-body">
+        const title = document.createElement("h3");
+        title.textContent = this.title;
 
-                <div class="project-number">
-                    ${this.number}
-                </div>
+        const description = document.createElement("p");
+        description.textContent = this.description;
 
-                <h3>${this.title}</h3>
+        const tagList = document.createElement("div");
+        tagList.className = "project-tags";
+        tagList.innerHTML = tags;
 
-                <p>${this.description}</p>
-
-                <div class="project-tags">
-                    ${tags}
-                </div>
-
-            </div>
-        `;
+        card.append(visual, number, title, description, tagList);
 
         return card;
     }
 }
 
 const projects = [
-
     new Project(
         "01",
         "Thrive — Weather Companion",
-
         "A weather and disaster-preparedness web project designed to help users monitor weather conditions, access advisories, and find emergency resources.",
-
-        [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Weather API",
-            "Leaflet"
-        ],
-
+        ["HTML", "CSS", "JavaScript", "Weather API", "Leaflet"],
+        "weather",
         "Thrive.jpg"
     ),
-
     new Project(
         "02",
-        "Unwind",
-
-        "A mobile application designed to help users destress and relax through a calm and user-friendly digital experience.",
-
-        [
-            "Mobile App",
-            "UI Design",
-            "Wellness"
-        ],
-
+        "Unwind — Meditation Companion",
+        "A calming meditation concept with short guided sessions to help users pause, refocus, and return their attention to the present.",
+        ["UI Design", "Wellness", "Mobile App"],
+        "unwind",
         "meditate.jpg"
     ),
-
     new Project(
         "03",
         "Ponggal Restaurant Management System",
-
-        "A restaurant management system project designed to organize restaurant operations and provide a more efficient digital workflow.",
-
-        [
-            "System Analysis",
-            "UI Design",
-            "Database",
-            "Team Project"
-        ],
-
+        "A restaurant management system project designed to organize operational information and provide a more efficient digital workflow.",
+        ["System Analysis", "UI Design", "Database", "Team Project"],
+        "restaurant",
         "ponggal.jpg"
     )
-
 ];
 
 const projectsGrid = document.getElementById("projectsGrid");
@@ -113,12 +97,14 @@ const navMenu = document.getElementById("navMenu");
 const menuToggle = document.getElementById("menuToggle");
 
 menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
+    const isOpen = navMenu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
 navLinks.forEach(link => {
     link.addEventListener("click", () => {
         navMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
     });
 });
 
